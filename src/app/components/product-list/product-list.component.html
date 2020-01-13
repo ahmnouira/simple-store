@@ -3,16 +3,19 @@
     <div *ngFor="let product of products" class="col-md-4 col-xs-6">
         <div class="card mb-4 mt-4">
             <div class="card-header">
-                <h4 class="text-danger font-weight-bold font-italic"><a class="text-decoration-none" [routerLink]="['products', product.id]"
+                <h4 class="text-danger font-weight-bold font-italic"><a class="text-decoration-none"
+                        [routerLink]="['products', product.id]"
                         [title]="product.description + ' details'">{{product.name}}</a></h4>
             </div>
             <div class="card-content m-2">
-                <img class="card-img-top" src="assets/images/{{product.image}}">
+                <img [routerLink]="['products', product.id]" class="card-img-top" alt="{{product.name}}"
+                    src="assets/images/{{product.image}}" title="{{product.name}}">
                 <hr>
                 <span class="badge badge-pill badge-warning float-right">{{product.price | currency:'TND'}}</span>
-                <small *ngIf="product.description">{{product.description}} </small>
+                <small *ngIf="product.description">{{product.description}}</small>
                 <hr>
-                <button (click)="share(product)" class="btn btn-danger">Share</button>
+                <button (click)="share(product)" class="btn btn-danger"><i
+                        class="fas fa-share-square"></i>&nbsp;Share</button>
                 <app-product-alerts [product]='product' (notify)="notify(product)"></app-product-alerts>
             </div>
         </div>
