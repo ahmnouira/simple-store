@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "firstApp": {
+    "simple-store": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/firstApp",
+            "outputPath": "dist/simple-store",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "firstApp:build"
+            "browserTarget": "simple-store:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "firstApp:build:production"
+              "browserTarget": "simple-store:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "firstApp:build"
+            "browserTarget": "simple-store:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "firstApp:serve"
+            "devServerTarget": "simple-store:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "firstApp:serve:production"
+              "devServerTarget": "simple-store:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "firstApp"
+  "defaultProject": "simple-store"
 }
