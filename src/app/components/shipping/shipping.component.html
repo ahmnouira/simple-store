@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-header">
+        Shipping Prices
+    </div>
+    <div class="card-content">
+        <table class="table table-striped table-hover">
+            <thead>
+                <th>Type</th>
+                <th>Price</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let shipping of shippingCosts | async">
+                    <td>{{shipping.type}}</td>
+                    <td>{{shipping.price | currency:'TND'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

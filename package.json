@@ -1,6 +1,17 @@
 {
   "name": "simple-store",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Build a simple e-commerce site with a catalog, shopping cart, and check-out form",
+  "author": {
+    "name": "Ahmed Nouira",
+    "email": "ahmnouira@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmnouira/simple-store"
+  },
+  "readme": "https://github.com/ahmnouira/simple-store#readme",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +20,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",

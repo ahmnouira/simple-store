@@ -4,7 +4,8 @@
 <div *ngIf="product" class="row">
 
     <div class="col-md-4">
-        <img class="img img-thumbnail rounded" src="assets/images/{{product.image}}" [alt]="product.name" [title]="product.name">
+        <img class="img-thumbnail rounded" src="assets/images/{{product.image}}" [alt]="product.name"
+            [title]="product.name">
     </div>
 
     <div class="col-md-8">
@@ -19,7 +20,8 @@
     <div class="col-md-4">
     </div>
     <div class="col-md-8">
-        <button (click)='goBack()' class="btn btn-primary float-right"><i class="fas fa-arrow-left"></i>&nbsp;Back</button>
+        <button (click)="addToCart(product)" class="btn btn-danger btn-lg float-right"><i class="fas fa-shopping-basket"></i>&nbsp;Buy</button>
+        <button (click)='goBack()' class="btn btn-primary btn-lg"><i class="fas fa-arrow-left"></i>&nbsp;Back</button>
     </div>
 
 </div>

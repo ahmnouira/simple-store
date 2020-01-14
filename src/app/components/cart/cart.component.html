@@ -1,0 +1,55 @@
+<h2 *ngIf="!products" class="text-warning">Please Wait...</h2>
+<h2 *ngIf="products.length === 0" class="text-danger">Empty Cart !</h2>
+
+<section *ngIf="products.length > 0">
+
+    <div class="row">
+        <div class="col-md-9">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <th>id</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{product.id}}</td>
+                        <td><img width="68" height="68" src="assets/images/{{product.image}}" alt="{{product.name}}"
+                                title="{{product.name}}"></td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.price | currency:'TND'}}</td>
+                        <td>{{product.description}}</td>
+                        <td><button (click)='delete(product)' class="btn btn-danger"><i
+                                    class="fas fa-dumpster"></i>&nbsp;Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <app-shipping></app-shipping>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <form [formGroup]="checkoutFrom">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input id="name" formControlName="name" class="form-control" type="text" placeholder="Name...">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address: </label>
+                    <input id="address" formControlName="address" class="form-control" type="text"
+                        placeholder="Address...">
+                </div>
+                <button type="button" routerLink="/" class="btn btn-primary float-right"><i
+                        class="fas fa-shopping-basket"></i>&nbsp;Shopping</button>
+                <button (click)="onSubmit()" class="btn btn-success"><i class="fas fa-money-bill"></i>&nbsp;Purchase</button>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+</section>
